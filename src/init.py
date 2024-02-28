@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
 
+#source: in class provided recourses: https://github.com/hsaeidi-uncw/ur5e_control.git
 #Sidney Tsui
 #Report 1
 import rospy
@@ -10,6 +10,7 @@ from trajectory_msgs.msg import JointTrajectory
 from trajectory_msgs.msg import JointTrajectoryPoint
 from std_msgs.msg import Header
 
+##outline from ur5e_control.git repo, hsaeidi-uncw
 
 if __name__ == '__main__':
 	# initialize the node
@@ -40,9 +41,9 @@ if __name__ == '__main__':
 	# just change the value of the command for the elbow joint
 	pos_cmd_point.positions[0] = math.pi/4
 	# add the trajectory point to the command
-	pos_cmd_point.positions[3] = -math.pi/2
+	pos_cmd_point.positions[3] = -math.pi/2 #used trial and error to move joint to appropriate place
 	#setting initial positions
-	pos_cmd_point.positions[4] = -math.pi/2
+	pos_cmd_point.positions[4] = -math.pi/2#used trial and error for correct values
 	pos_cmd.points.append(pos_cmd_point)
 	# define a message header	
 	header = Header()
